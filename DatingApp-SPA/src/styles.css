@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles balise in angular.settings doesn't respect order in loading styles of the application */
+/* css is by his name cascading so we want to override styles by our selves */
+/* so if we use style array in angular.settings we don't have any control over ordering */
+/* so what we'll do is import directly styles inside our styles file here */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';

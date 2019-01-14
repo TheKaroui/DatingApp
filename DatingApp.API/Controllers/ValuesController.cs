@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using DatingApp.API.DataProviders.Domain;
 using DatingApp.API.DataProviders.Repository.RepoContracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DatingAPP.API.Controllers {
+
+
     /// <summary>
     /// by default the kestrel web server lestens on port 5000 => http://localhost:5000/api/values
     /// </summary>
+    // [Authorize] no need after we added the filter globally in startup.cs
     [Route ("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase {
@@ -30,6 +30,7 @@ namespace DatingAPP.API.Controllers {
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet ("{id}")]
         public async Task<IActionResult> GetValueById (int id) {
             return Ok (await _ValueRepository.GetByIdAsync(id));

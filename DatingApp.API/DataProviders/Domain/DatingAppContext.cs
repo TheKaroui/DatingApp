@@ -12,8 +12,8 @@ namespace DatingApp.API.DataProviders.Domain {
         protected override void OnModelCreating (ModelBuilder builder) {
 
             builder.HasDefaultSchema("sch_dta");
-            builder.ApplyConfiguration(new UserMap ());
-            builder.ApplyConfiguration(new ValueMap ());
+            builder.ApplyConfiguration(new UserMap());
+            builder.ApplyConfiguration(new ValueMap());
             base.OnModelCreating(builder);
         }
     }

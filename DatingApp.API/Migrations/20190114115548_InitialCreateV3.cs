@@ -2,7 +2,7 @@
 
 namespace DatingAPP.API.Migrations
 {
-    public partial class removetwewelzeydin : Migration
+    public partial class InitialCreateV3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

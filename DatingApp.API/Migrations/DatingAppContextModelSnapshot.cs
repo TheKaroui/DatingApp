@@ -26,11 +26,9 @@ namespace DatingAPP.API.Migrations
                         .HasMaxLength(250);
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasMaxLength(100);
 
                     b.Property<byte[]>("PasswordHash");

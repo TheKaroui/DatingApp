@@ -22,6 +22,7 @@ namespace DatingApp.API.Controllers {
         //We don't refer [FromBody because we use [ApiController]
         // public async Task<IActionResult> Register ([FromBody] UserModel usrModel)
         [HttpPost("Register")]
+        [AllowAnonymous]
         public async Task<IActionResult> Register (UserToRegisterModel usrModel) {
             //TODO Validate request
 

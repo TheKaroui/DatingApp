@@ -1,0 +1,39 @@
+{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/*.css",
+        "/*.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }],
+  "dataGroups": [
+    {
+      "name": "values",
+      "urls": [
+        "http://localhost:5000/api/values",
+        "http://localhost:5000/api/values/12"
+      ],
+      "cacheConfig":{
+        "maxSize": 5,
+        "maxAge": "2h",
+        "timeout": "25s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}

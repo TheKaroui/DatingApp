@@ -23,10 +23,11 @@
   }],
   "dataGroups": [
     {
-      "name": "values",
+      "name": "values-api",
       "urls": [
         "http://localhost:5000/api/values",
-        "http://localhost:5000/api/values/12"
+        "http://localhost:5000/api/values/12",
+        "https://api.chucknorris.io/jokes/random"
       ],
       "cacheConfig":{
         "maxSize": 5,

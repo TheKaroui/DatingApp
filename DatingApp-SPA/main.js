@@ -1,6 +1,13 @@
-const { app, BrowserWindow } = require('electron')
+import { app, BrowserWindow } from 'electron';
+const basepath = app.getAppPath();
 
 let win;
+/// add "." inside <base href="./"> in index.html to make electron work with it
+/// npm install electron --save-dev
+///create main.Js in root !!! same level as package.json
+/// add main js file to package .json
+// add both new commands in package.json electron and electron-build
+/// npm run electron-build
 
 function createWindow () {
   // Create the browser window.
@@ -8,11 +15,10 @@ function createWindow () {
     width: 600, 
     height: 600,
     backgroundColor: '#ffffff',
-    icon: 'file://../../dist/DatingApp-SPA/assets/logo.png '
+    icon: `file://${basepath}/dist/DatingApp-SPA/assets/logo.png`
   })
 
-
-  win.loadURL('../../dist/DatingApp-SPA/index.html')
+  win.loadURL(`file://${basepath}/dist/DatingApp-SPA/index.html`)
 
 
 

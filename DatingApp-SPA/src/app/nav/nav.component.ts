@@ -1,20 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
   model: any = {};
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private authService: AuthService) {}
 
   login() {
-    console.log(this.model);
+    this.authService.login(this.model).subscribe(
+      next => {
+        console.log('logged in sucessfully');
+      },
+      error => {
+        console.log('failed to login');
+      }
+    );
   }
 
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    console.log('Logged out');
+  }
 }

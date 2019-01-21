@@ -4,18 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NavComponent } from './nav/nav.component';
 
-import { DataService } from './data.service';
+import { DataService } from './_services/data.service';
+import { AuthService } from './_services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
    declarations: [
       AppComponent,
-      ValueComponent,
-      NavComponent
+      NavComponent,
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
@@ -23,7 +26,7 @@ import { DataService } from './data.service';
       ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
       FormsModule
    ],
-   providers: [DataService],
+   providers: [DataService, AuthService],
    bootstrap: [AppComponent]
 })
 export class AppModule {}

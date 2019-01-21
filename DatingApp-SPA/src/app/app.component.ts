@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
-import { DataService } from './data.service';
+import { DataService } from './_services/data.service';
 
 @Component({
   selector: 'app-root',

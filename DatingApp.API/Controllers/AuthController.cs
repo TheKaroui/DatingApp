@@ -23,11 +23,11 @@ namespace DatingApp.API.Controllers {
         // public async Task<IActionResult> Register ([FromBody] UserModel usrModel)
         [HttpPost("Register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register (UserToRegisterModel usrModel) {
+        public async Task<IActionResult> Register (UserToRegisterModel usrModel) 
+        {
             //TODO Validate request
-
-            if (await _userRepository.UserExists (usrModel.UserName.ToLower ()))
-                return BadRequest ("User name already exists");
+            // if (await _userRepository.UserExists (usrModel.UserName.ToLower ()))
+                // return BadRequest ("User name already exists");
 
             var userToCreate = new DataProviders.Entities.User {
                 UserName = usrModel.UserName.ToLower()

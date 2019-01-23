@@ -8,6 +8,8 @@ namespace DatingApp.API.DataProviders.EntitiesMap {
 
             builder.ToTable("t_User");
             builder.HasKey(u => u.Id);
+            builder.Property(u => u.UserName);
+            builder.HasIndex(u => u.UserName).IsUnique();
             builder.Property(u => u.LastName).HasMaxLength (100);
             builder.Property(u => u.FirstName).HasMaxLength (50);
             builder.Property(u => u.Email).HasMaxLength (250);

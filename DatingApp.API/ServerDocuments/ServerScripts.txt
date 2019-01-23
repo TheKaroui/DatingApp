@@ -3,3 +3,4 @@ dotnet ef migrations remove "MigrationName"
 dotnet ef database update
 
 npm install alertifyjs --save
+npm install @auth0/angular-jwt

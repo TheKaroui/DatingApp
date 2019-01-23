@@ -19,7 +19,7 @@
 
   <div *ngIf="loggedIn()" class="dropdown">
     <a class="dropdown-toggle text-light" >
-      Welcome user
+      Welcome {{authService.decodedToken?.unique_name | titlecase}}
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit profile</a>

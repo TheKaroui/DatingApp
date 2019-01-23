@@ -26,6 +26,7 @@
     "@angular/pwa": "^0.12.2",
     "@angular/router": "^6.0.3",
     "@angular/service-worker": "^6.0.3",
+    "@auth0/angular-jwt": "^2.1.0",
     "alertifyjs": "^1.11.2",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",

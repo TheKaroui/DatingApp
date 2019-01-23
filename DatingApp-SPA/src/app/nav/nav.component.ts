@@ -10,7 +10,7 @@ import { AuthService } from '../_services/auth.service';
 export class NavComponent {
   model: any = {};
 
-  constructor(private authService: AuthService, private alertify: AlertifyService) {}
+  constructor(public authService: AuthService, private alertify: AlertifyService) {}
 
   login() {
     this.authService.login(this.model).subscribe(
@@ -24,8 +24,7 @@ export class NavComponent {
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    return this.authService.loggedIn();
   }
 
   logout() {

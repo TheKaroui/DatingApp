@@ -39,7 +39,6 @@ export class ErrorInterceptor implements HttpInterceptor {
                                 } else {
                                     return throwError(error.statusText);
                                 }
-                                // return throwError(modalStateErrors || serverError || 'Something else error- to ckeck');
                             }
                         }
                 )

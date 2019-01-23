@@ -1,0 +1,10 @@
+Module 6:
+
+-alertifyJS: .com
+modify in angular.json (then its available globally ) to add scripts then modify styles.css to add styles of this lib
+
+-angular JWT
+
+
+-ngx bootstrap: instead of bootstrap js because it relays on jquery
+- bootswatch : theming

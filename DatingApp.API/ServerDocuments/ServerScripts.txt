@@ -1,3 +1,5 @@
 dotnet ef migrations add "MigrationName"
 dotnet ef migrations remove "MigrationName"
 dotnet ef database update
+
+npm install alertifyjs --save

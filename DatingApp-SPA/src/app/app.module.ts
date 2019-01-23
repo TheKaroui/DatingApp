@@ -12,6 +12,7 @@ import { DataService } from './_services/data.service';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ErrorIntercepptorProvider } from './_services/error.interceptor';
 
 @NgModule({
    declarations: [
@@ -26,7 +27,7 @@ import { RegisterComponent } from './register/register.component';
       ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
       FormsModule
    ],
-   providers: [DataService, AuthService],
+   providers: [DataService, AuthService, ErrorIntercepptorProvider],
    bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Http;
 
 namespace DatingApp.API.Core.Extensions {
     public static class Extensions {
@@ -21,6 +22,13 @@ namespace DatingApp.API.Core.Extensions {
             var selector = Expression.Lambda (body, parameterExpression);
             var orderByExpression = Expression.Call (typeof (Queryable), orderByMethodName, new [] { elementType, body.Type }, queryable.Expression, selector);
             return queryable.Provider.CreateQuery<T> (orderByExpression);
+        }
+
+        public static void AddApplicationError(this HttpResponse response, string message) 
+        {
+            response.Headers.Add("Application-Error", message);
+            response.Headers.Add("Access-Control-Expose-Headers", "Application-Error");
+            response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
 
     }

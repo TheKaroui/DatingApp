@@ -8,3 +8,19 @@ modify in angular.json (then its available globally ) to add scripts then modify
 
 -ngx bootstrap: instead of bootstrap js because it relays on jquery
 - bootswatch : theming
+
+
+module 7:
+-setting up routing:
+    wildcard route has important order in routing list
+    modify in html "href"s with "a-routerLink"
+    Using "routerLinkActive": put in .html in ddl li item active by routerLinkActive in every "li"
+    replace in "appCompHtml" replace "<app-home>" with "router-outlet" wich will add 
+    message works in page when clicking on Link
+
+    Using "routing rules" when i click i want to go to ... in code: possible via "angular/router"
+    via this.router.navigate(['/link'])
+
+-protecting the routes (event. multiple routes at once) via routeGuard
+    when user types url to page wich is protected bu auth he should be redirected to home
+    this is done via route routeGuard

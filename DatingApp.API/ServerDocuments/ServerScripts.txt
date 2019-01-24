@@ -4,3 +4,5 @@ dotnet ef database update
 
 npm install alertifyjs --save
 npm install @auth0/angular-jwt
+npm install ngx-bootstrap@3.0.1 --save
+npm install bootswatch@4.1.1

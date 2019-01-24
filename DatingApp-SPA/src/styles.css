@@ -4,6 +4,7 @@
 /* so if we use style array in angular.settings we don't have any control over ordering */
 /* so what we'll do is import directly styles inside our styles file here */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootswatch/dist/united/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';

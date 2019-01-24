@@ -1,6 +1,6 @@
 Module 6: 3rd party libraries
 
--alertifyJS: .com
+-alertifyJS: .com : alerts and popups management
 modify in angular.json (then its available globally ) to add scripts then modify styles.css to add styles of this lib
 
 -angular JWT

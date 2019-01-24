@@ -18,7 +18,8 @@ import { ErrorIntercepptorProvider } from './_services/error.interceptor';
 import { MemberListComponent } from './member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { appRoutes } from 'src/Routes/routes';
+import { appRoutes } from 'src/_Routing/routes';
+import { AuthGuard } from './../_Routing/_guards/auth.guard';
 
 
 @NgModule({
@@ -39,7 +40,13 @@ import { appRoutes } from 'src/Routes/routes';
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes)
    ],
-   providers: [DataService, AuthService, ErrorIntercepptorProvider, AlertifyService],
+   providers: [
+      DataService,
+      AuthService,
+      ErrorIntercepptorProvider,
+      AlertifyService,
+      AuthGuard
+   ],
    bootstrap: [AppComponent]
 })
 export class AppModule {}

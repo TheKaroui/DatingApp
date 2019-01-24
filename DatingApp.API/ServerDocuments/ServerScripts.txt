@@ -2,6 +2,13 @@ dotnet ef migrations add "MigrationName"
 dotnet ef migrations remove "MigrationName"
 dotnet ef database update
 
+
+---
+ng g guard auth --spec=false
+g: generate 
+--spec=false: don't generate test file
+---
+
 npm install alertifyjs --save
 npm install @auth0/angular-jwt
 npm install ngx-bootstrap@3.0.1 --save

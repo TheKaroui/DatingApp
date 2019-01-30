@@ -2,7 +2,7 @@ using System;
 
 namespace DatingApp.API.Models
 {
-    public class UserForListModel
+    public class BasicUserCard
     {
         public int Id { get; set; }
         public string Username { get; set; }

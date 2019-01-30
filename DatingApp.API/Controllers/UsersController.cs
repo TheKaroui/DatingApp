@@ -1,5 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatingApp.API.DataProviders.Repository.RepoContracts;
+using DatingApp.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingApp.API.Controllers {
@@ -8,10 +12,10 @@ namespace DatingApp.API.Controllers {
     [ApiController]
     public class UsersController : ControllerBase {
         private readonly IUserRepository _userRepo;
-        //private readonly IMapper _mapper;
-        public UsersController (IUserRepository repo) //, IMapper mapper)
+        private readonly IMapper _mapper;
+        public UsersController (IUserRepository repo , IMapper mapper)
         {
-            //_mapper = mapper;
+            _mapper = mapper;
             _userRepo = repo;
         }
 
@@ -19,18 +23,19 @@ namespace DatingApp.API.Controllers {
         public async Task<IActionResult> GetUsers () {
             var users = await _userRepo.QueryAsync(u => true, u => u.Photos);
 
-            //var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+            var usersToReturn = _mapper.Map<IEnumerable<BasicUserCard>>(users);
 
-            return Ok (users);
+            return Ok (usersToReturn);
         }
 
         [HttpGet ("{id}")]
-        public async Task<IActionResult> GetUser (int id) {
-            var user = await _userRepo.GetByIdAsync(id);
+        public IActionResult GetUser (int id) {
 
-            //var userToReturn = _mapper.Map<UserForDetailedDto> (user);
+            var user = _userRepo.QueryAsync(u=> u.Id.Equals(id), u=>u.Photos).Result.SingleOrDefault();
 
-            return Ok (user);
+            var userToReturn = _mapper.Map<FullUserCard>(user);
+
+            return Ok (userToReturn);
         }
     }
 }

@@ -29,3 +29,5 @@ module 8:
 - seeding app with jsonGenerator for models
 json jsonGenerator to seed data
 removing referenceloop from json errors
+adding dtos
+adding automapper (...injectiondependencies) 4.0.1

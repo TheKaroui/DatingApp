@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatingApp.API.Core.Extensions;
 using DatingApp.API.DataProviders.Domain;
 using DatingApp.API.DataProviders.Domain.SeedData;
@@ -53,6 +54,7 @@ namespace DatingAPP.API {
                     ValidateAudience = false
                 };
             });
+            services.AddAutoMapper();
             services.AddCors();
             services.AddMvc(options => options.Filters.Add(new AuthorizeFilter(policy)))
                             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -60,8 +62,6 @@ namespace DatingAPP.API {
                                 opt.SerializerSettings.ReferenceLoopHandling = 
                                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                             });
-            
-
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IValueRepository, ValueRepository>();

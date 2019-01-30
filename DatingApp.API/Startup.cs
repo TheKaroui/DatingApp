@@ -55,7 +55,11 @@ namespace DatingAPP.API {
             });
             services.AddCors();
             services.AddMvc(options => options.Filters.Add(new AuthorizeFilter(policy)))
-                            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                            .AddJsonOptions(opt => {
+                                opt.SerializerSettings.ReferenceLoopHandling = 
+                                Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                            });
             
 
 

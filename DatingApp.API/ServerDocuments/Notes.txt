@@ -28,3 +28,4 @@ module 7:
 module 8:
 - seeding app with jsonGenerator for models
 json jsonGenerator to seed data
+removing referenceloop from json errors

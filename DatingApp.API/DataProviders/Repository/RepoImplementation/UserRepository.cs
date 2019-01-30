@@ -15,7 +15,7 @@ namespace DatingApp.API.DataProviders.Repository.RepoImplementation {
 
         public User LogIn (string username, string password) {
             
-            var user =  QueryAsync(u =>u.UserName.ToLower().Equals(username)).Result.FirstOrDefault();
+            var user =  QueryAsync(u =>u.Username.ToLower().Equals(username)).Result.FirstOrDefault();
 
             if(user == null) 
                 return null;
@@ -32,7 +32,7 @@ namespace DatingApp.API.DataProviders.Repository.RepoImplementation {
 
             byte[] passwordHash, passwordSalt;
 
-            user.UserName = user.UserName.ToLower();
+            user.Username = user.Username.ToLower();
             SecurityHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
@@ -46,7 +46,7 @@ namespace DatingApp.API.DataProviders.Repository.RepoImplementation {
         
 
         public async Task<bool> UserExists (string username) {
-            if (await ExistsAsync(x => x.UserName == username))
+            if (await ExistsAsync(x => x.Username == username))
                 return true;
             return false;
         }

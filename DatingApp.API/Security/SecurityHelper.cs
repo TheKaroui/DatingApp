@@ -31,7 +31,7 @@ namespace DatingApp.API.Security {
         public static object GetSecurityToken (DataProviders.Entities.User userFromDb, string tokenValue) {
             var claims = new [] {
                 new Claim(ClaimTypes.NameIdentifier, userFromDb.Id.ToString()),
-                new Claim(ClaimTypes.Name, userFromDb.UserName),
+                new Claim(ClaimTypes.Name, userFromDb.Username),
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenValue));
 

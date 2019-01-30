@@ -30,7 +30,7 @@ namespace DatingApp.API.Controllers {
                 return BadRequest ("User name already exists");
 
             var userToCreate = new DataProviders.Entities.User {
-                UserName = usrModel.UserName.ToLower()
+                Username = usrModel.UserName.ToLower()
             };
 
             var createdUser = await _userRepository.Register (userToCreate, usrModel.Password);

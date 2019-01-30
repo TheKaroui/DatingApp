@@ -24,3 +24,7 @@ module 7:
 -protecting the routes (event. multiple routes at once) via routeGuard
     when user types url to page wich is protected bu auth he should be redirected to home
     this is done via route routeGuard
+
+module 8:
+- seeding app with jsonGenerator for models
+json jsonGenerator to seed data

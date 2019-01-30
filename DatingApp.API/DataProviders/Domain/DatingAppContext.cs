@@ -14,6 +14,8 @@ namespace DatingApp.API.DataProviders.Domain {
             builder.HasDefaultSchema("sch_dta");
             builder.ApplyConfiguration(new UserMap());
             builder.ApplyConfiguration(new ValueMap());
+            builder.ApplyConfiguration(new PhotoMap());
+
             base.OnModelCreating(builder);
         }
     }

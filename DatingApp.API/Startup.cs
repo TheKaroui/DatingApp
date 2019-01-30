@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatingApp.API.Core.Extensions;
 using DatingApp.API.DataProviders.Domain;
+using DatingApp.API.DataProviders.Domain.SeedData;
 using DatingApp.API.DataProviders.Repository.RepoContracts;
 using DatingApp.API.DataProviders.Repository.RepoImplementation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -60,11 +61,12 @@ namespace DatingAPP.API {
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IValueRepository, ValueRepository>();
+            services.AddTransient<Seed>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure (IApplicationBuilder app, IHostingEnvironment env) {
+        public void Configure (IApplicationBuilder app, IHostingEnvironment env, Seed seeder) {
 
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
@@ -90,10 +92,12 @@ namespace DatingAPP.API {
             }
 
             // app.UseHttpsRedirection();
+            //seeder.SeedUsers();
 
-            app.UseAuthentication();
+            
             //enabling cross origin CORS
             app.UseCors (x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseAuthentication();
             
             app.UseMvc ();
         }

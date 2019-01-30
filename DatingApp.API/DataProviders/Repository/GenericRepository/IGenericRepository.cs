@@ -21,10 +21,12 @@ namespace DatingApp.API.DataProviders.Repository.GenericRepository {
         #region PersistRepository
 
         Task AddAsync (TEntity entity);
+        void Add (TEntity entity);
         void AddRangeAsync (IEnumerable<TEntity> items);
         void UpdateAsync (TEntity entity);
         void DeleteAsync (int id);
         Task<int> SaveAsync();
+        int Save();
         void Dispose();
 
         #endregion

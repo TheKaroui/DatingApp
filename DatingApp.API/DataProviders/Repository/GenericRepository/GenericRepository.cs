@@ -22,6 +22,10 @@ namespace DatingApp.API.DataProviders.Repository.GenericRepository {
         public async Task AddAsync (TEntity entity) {
             await _entitySet.AddAsync (entity);
         }
+
+        public void Add(TEntity entity) {
+            _entitySet.Add(entity);
+        }
         public void AddRangeAsync (IEnumerable<TEntity> items) {
             Parallel.ForEach (items, async (currentItem) => await AddAsync (currentItem));
         }
@@ -89,6 +93,10 @@ namespace DatingApp.API.DataProviders.Repository.GenericRepository {
 
         public async Task<int> SaveAsync () {
             return await _context.SaveChangesAsync();
+        }
+
+        public int Save() {
+            return _context.SaveChanges();
         }
 
 

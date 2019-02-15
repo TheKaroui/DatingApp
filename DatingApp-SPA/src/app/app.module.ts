@@ -15,11 +15,13 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorIntercepptorProvider } from './_services/error.interceptor';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from 'src/_Routing/routes';
 import { AuthGuard } from './../_Routing/_guards/auth.guard';
+import { UserService } from './_services/user.service';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { AuthGuard } from './../_Routing/_guards/auth.guard';
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,
@@ -45,7 +48,8 @@ import { AuthGuard } from './../_Routing/_guards/auth.guard';
       AuthService,
       ErrorIntercepptorProvider,
       AlertifyService,
-      AuthGuard
+      AuthGuard,
+      UserService
    ],
    bootstrap: [AppComponent]
 })

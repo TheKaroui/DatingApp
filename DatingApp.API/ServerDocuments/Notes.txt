@@ -33,3 +33,11 @@ adding dtos
 adding automapper (...injectiondependencies) 4.0.1
 Using AutoMapper
 Configuring automapper
+
+module 9: angular
+- types of typeScript => transpiled into javascript (interfaces does not end up in our javascript code)
+- retrieving data from api services
+- using bootstrap to create membercads
+- adding detailed view of users
+- route resolvers: retrieve data before acessing route
+- adding photo gallery

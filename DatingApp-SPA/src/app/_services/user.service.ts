@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 //   })
 // };
 // the problem of this method is that it takes
-// time after login to store token on local storage on certain
+// short time after login to store token on local storage on certain
 // machines so the best way is doing it on bootstrap of the
 // application in appmodule.ts in imports section
 

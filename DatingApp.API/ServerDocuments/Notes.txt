@@ -39,5 +39,11 @@ module 9: angular
 - retrieving data from api services
 - using bootstrap to create membercads
 - adding detailed view of users
-- route resolvers: retrieve data before acessing route
 - adding photo gallery
+- @auth0/angular-jwt Auth0 jwt token management via JwtModule.forRoot in imports in appmodule.ts and remove the httpOption from userService.ts
+- +this.route.snapshot.params['id'] gets the users/id gets the ID by injecting route: ActivatedRoot
+    since we need to retrieve it as number we put the + : +this.route.snapshot.params['id']
+- after we create new compononent we need to create new route the way we can access that component via url
+- [routerLink]="['/members/', user.id]" serves for click link role.
+- route resolvers: retrieve data before acessing route. its used to make us not necessarely using safe navigation operators "?"
+- safe navigation operator: adding ? on nullable properties the way we don't get errors in cosole for that anymore

@@ -13,3 +13,4 @@ npm install alertifyjs --save
 npm install @auth0/angular-jwt
 npm install ngx-bootstrap@3.0.1 --save
 npm install bootswatch@4.1.1
+npm install ngx-gallery@5.3.2 --save

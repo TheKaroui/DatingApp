@@ -25,6 +25,7 @@ namespace DatingApp.API.Core.Helpers.AutoMapper
                     opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
                 });
             CreateMap<Photo, BasicPhotoCard>();
+            CreateMap<UserForUpdateModel, User>();
         }
     }
 }

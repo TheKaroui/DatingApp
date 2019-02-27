@@ -47,3 +47,9 @@ module 9: angular
 - [routerLink]="['/members/', user.id]" serves for click link role.
 - route resolvers: retrieve data before acessing route. its used to make us not necessarely using safe navigation operators "?"
 - safe navigation operator: adding ? on nullable properties the way we don't get errors in cosole for that anymore
+
+module 10:
+as using canActivate to see if we can use some routes in authGuard.ts
+using routeGuards to prevent user to change view and loosing all data: implements CanDeactivate<MemberEditComponent>
+preventing user from closing browser by error: angular has no control beyond routes and what relates to routes so this is
+why we user hostListnersDecorator to listen to our browser.

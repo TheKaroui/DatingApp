@@ -13,6 +13,7 @@ namespace DatingApp.API.DataProviders.EntitiesMap {
             builder.Property (ph => ph.Description);
             builder.Property (ph => ph.DateAdded);
             builder.Property (ph => ph.IsMain);
+            builder.Property (ph => ph.PublicId).IsRequired();
         }
 
     }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using DatingApp.API.Core.Extensions;
+using DatingApp.API.Core.Helpers;
 using DatingApp.API.DataProviders.Domain;
 using DatingApp.API.DataProviders.Domain.SeedData;
 using DatingApp.API.DataProviders.Repository.RepoContracts;
@@ -56,6 +57,7 @@ namespace DatingAPP.API {
             });
             services.AddAutoMapper();
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddMvc(options => options.Filters.Add(new AuthorizeFilter(policy)))
                             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                             .AddJsonOptions(opt => {

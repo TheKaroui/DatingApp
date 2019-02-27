@@ -53,3 +53,9 @@ as using canActivate to see if we can use some routes in authGuard.ts
 using routeGuards to prevent user to change view and loosing all data: implements CanDeactivate<MemberEditComponent>
 preventing user from closing browser by error: angular has no control beyond routes and what relates to routes so this is
 why we user hostListnersDecorator to listen to our browser.
+
+@HostListener decorator to acess dom functionnalities (prevent user from leaving dirty form unsaved )
+@ViewChild decorator we can acess the form component in our component from our template. template reference variable
+
+module 11:
+upload images feature

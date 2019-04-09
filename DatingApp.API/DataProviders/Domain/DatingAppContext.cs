@@ -6,7 +6,7 @@ namespace DatingApp.API.DataProviders.Domain {
     public class DatingAppContext : DbContext {
         public DatingAppContext (DbContextOptions<DatingAppContext> options) : base (options) {
 
-            Database.EnsureCreatedAsync();
+            //Database.EnsureCreatedAsync();
         }
 
         protected override void OnModelCreating (ModelBuilder builder) {

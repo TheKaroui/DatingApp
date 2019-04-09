@@ -15,7 +15,7 @@ namespace DatingAPP.API.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("sch_dta")
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085");
 
             modelBuilder.Entity("DatingApp.API.DataProviders.Entities.Photo", b =>
                 {
@@ -28,8 +28,7 @@ namespace DatingAPP.API.Migrations
 
                     b.Property<bool>("IsMain");
 
-                    b.Property<string>("PublicId")
-                        .IsRequired();
+                    b.Property<string>("PublicId");
 
                     b.Property<string>("Url");
 
@@ -90,6 +89,12 @@ namespace DatingAPP.API.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<string>("Test")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
+                    b.Property<int>("TestInt");
 
                     b.HasKey("Id");
 

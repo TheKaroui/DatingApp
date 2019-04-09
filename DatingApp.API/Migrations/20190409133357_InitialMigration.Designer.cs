@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingAPP.API.Migrations
 {
     [DbContext(typeof(DatingAppContext))]
-    [Migration("20190227155108_AddedPublicIdInPhotosWithRequired")]
-    partial class AddedPublicIdInPhotosWithRequired
+    [Migration("20190409133357_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("sch_dta")
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085");
 
             modelBuilder.Entity("DatingApp.API.DataProviders.Entities.Photo", b =>
                 {
@@ -30,8 +30,7 @@ namespace DatingAPP.API.Migrations
 
                     b.Property<bool>("IsMain");
 
-                    b.Property<string>("PublicId")
-                        .IsRequired();
+                    b.Property<string>("PublicId");
 
                     b.Property<string>("Url");
 
@@ -92,6 +91,10 @@ namespace DatingAPP.API.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<string>("Test")
+                        .IsRequired()
+                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 

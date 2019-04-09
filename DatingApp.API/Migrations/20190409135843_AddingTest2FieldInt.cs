@@ -2,24 +2,24 @@
 
 namespace DatingAPP.API.Migrations
 {
-    public partial class AddedPublicIdInPhotosWithRequired : Migration
+    public partial class AddingTest2FieldInt : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "PublicId",
+            migrationBuilder.AddColumn<int>(
+                name: "TestInt",
                 schema: "sch_dta",
-                table: "t_Photo",
+                table: "t_Value",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: 0);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "PublicId",
+                name: "TestInt",
                 schema: "sch_dta",
-                table: "t_Photo");
+                table: "t_Value");
         }
     }
 }

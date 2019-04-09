@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingAPP.API.Migrations
 {
     [DbContext(typeof(DatingAppContext))]
-    [Migration("20190409135843_AddingTest2FieldInt")]
-    partial class AddingTest2FieldInt
+    [Migration("20190409145304_AddingSqlServerSqLiteTogetherInMigrations")]
+    partial class AddingSqlServerSqLiteTogetherInMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,15 +88,16 @@ namespace DatingAPP.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("Test")
-                        .IsRequired()
+                    b.Property<int>("SqlServerSqLiteTogetherInMigrations")
                         .HasMaxLength(10);
-
-                    b.Property<int>("TestInt");
 
                     b.HasKey("Id");
 

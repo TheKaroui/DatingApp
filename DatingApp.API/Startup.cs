@@ -43,8 +43,8 @@ namespace DatingAPP.API {
                             // .RequireRole("Admin", "SuperUser")
                             .Build();
 
-            services.AddDbContext<DatingAppContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<DatingAppContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            //services.AddDbContext<DatingAppContext>(x => x.UseSqlite(Configuration.GetConnectionString("SqLiteConnection")));
+            services.AddDbContext<DatingAppContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => 
             {
                 options.TokenValidationParameters = new TokenValidationParameters

@@ -2,22 +2,23 @@
 
 namespace DatingAPP.API.Migrations
 {
-    public partial class AddingTest2FieldInt : Migration
+    public partial class AddingDescriptionFoieldToValueAsTest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "TestInt",
+            migrationBuilder.AddColumn<string>(
+                name: "Description",
                 schema: "sch_dta",
                 table: "t_Value",
+                maxLength: 10,
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: "");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "TestInt",
+                name: "Description",
                 schema: "sch_dta",
                 table: "t_Value");
         }

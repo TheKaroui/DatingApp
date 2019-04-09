@@ -9,6 +9,7 @@ namespace DatingApp.API.DataProviders.EntitiesMap {
 
             builder.ToTable ("t_Photo");
             builder.HasKey (ph => ph.Id);
+            builder.Property (ph => ph.Id).ValueGeneratedOnAdd();
             builder.Property (ph => ph.Url);
             builder.Property (ph => ph.Description);
             builder.Property (ph => ph.DateAdded);

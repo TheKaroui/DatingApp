@@ -8,6 +8,7 @@ namespace DatingApp.API.DataProviders.EntitiesMap {
 
             builder.ToTable ("t_User");
             builder.HasKey (u => u.Id);
+            builder.Property(u => u.Id).ValueGeneratedOnAdd();//.UseSqlServerIdentityColumn(); fortement couplé à SQL Serveur
             builder.Property (u => u.Username);
             builder.HasIndex (u => u.Username).IsUnique();
             builder.Property (u => u.PasswordHash);

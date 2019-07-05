@@ -59,3 +59,15 @@ why we user hostListnersDecorator to listen to our browser.
 
 module 11:
 upload images feature
+
+
+Identity Management
+UserManager<User>
+RoleManager<TRole>
+models implement IdentityUser<int> interfacefrom aspnetcore.Identity
+which already has Id and PasswordHash properties
+
+Role : IdentityRole<T>
+DataAppliContext : IdentityDbContext instead of DbContext
+
+
